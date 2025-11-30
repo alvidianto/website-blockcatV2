@@ -4,36 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlockCat v2 - Meme Coin</title>
+
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: "Poppins", Arial, sans-serif;
             background: #0d1117;
             color: white;
+            overflow-x: hidden;
+        }
+
+        /* Background stars */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/7Vb6HVa.png');
+            opacity: 0.2;
+            animation: moveStars 40s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes moveStars {
+            0% { background-position: 0 0; }
+            100% { background-position: -2000px -2000px; }
         }
 
         header {
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
             background: #161b22;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
         }
 
         h1 {
-            font-size: 45px;
-            margin-bottom: 10px;
+            font-size: 50px;
+            margin-bottom: 5px;
+            animation: glow 3s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #58a6ff; }
+            to { text-shadow: 0 0 25px #00eaff; }
         }
 
         nav {
             background: #21262d;
-            padding: 12px;
+            padding: 15px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         nav a {
-            margin: 12px;
+            margin: 15px;
             text-decoration: none;
             color: #58a6ff;
             font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: cyan;
+            text-shadow: 0 0 10px cyan;
         }
 
         .container {
@@ -44,36 +80,67 @@
 
         .card {
             background: #161b22;
-            padding: 20px;
+            padding: 25px;
             margin-bottom: 20px;
             border-radius: 12px;
-            box-shadow: 0 0 10px rgba(255,255,255,0.05);
+            box-shadow: 0 0 20px rgba(0,255,255,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(0,255,255,0.3);
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 20px;
+            padding: 12px 22px;
             background: #58a6ff;
             color: black;
             font-weight: bold;
             border-radius: 8px;
             text-decoration: none;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: cyan;
+            box-shadow: 0 0 15px cyan;
+        }
+
+        /* Cute Cat Animation */
+        .cat {
+            width: 120px;
+            margin: auto;
+            display: block;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
         }
 
         footer {
             text-align: center;
-            padding: 10px;
-            margin-top: 30px;
+            padding: 15px;
+            margin-top: 40px;
             background: #21262d;
             font-size: 14px;
         }
     </style>
+
 </head>
 <body>
 
+<div class="stars"></div>
+
 <header>
+    <img class="cat" src="https://i.imgur.com/9O7QF3M.png" alt="Cat">
     <h1>🐱 BlockCat v2</h1>
-    <p>The Funniest Meme Coin on the Blockchain</p>
+    <p>The Funniest & Most Powerful Meme Coin on Blockchain</p>
 </header>
 
 <nav>
@@ -86,9 +153,8 @@
 
     <div class="card" id="about">
         <h2>🔥 About BlockCat v2</h2>
-        <p><b>BlockCat v2</b> adalah meme coin lucu bertema kucing blockchain. 
-        Dibuat untuk hiburan, komunitas, dan keunikan dalam dunia crypto.</p>
-        <p><b>Tujuan:</b> Build komunitas, spread fun, dan jadi meme coin viral berikutnya.</p>
+        <p><b>BlockCat v2</b> adalah meme coin bertema kucing blockchain dengan komunitas kuat & fun vibes.</p>
+        <p>Tujuan: jadi meme coin viral berikutnya!</p>
     </div>
 
     <div class="card" id="tokenomics">
@@ -97,24 +163,27 @@
             <li>Total Supply: <b>1,000,000,000 BlockCat</b></li>
             <li>Liquidity: Locked</li>
             <li>Tax: 0%</li>
-            <li>Network: Solana / ETH (sesuai rencana kamu nanti)</li>
+            <li>Network: Solana / ETH</li>
         </ul>
     </div>
 
     <div class="card" id="social">
         <h2>🌐 Social Media</h2>
         <p>Gabung komunitas BlockCat v2:</p>
-        <p>
-            <a class="btn" href="#" target="_blank">Telegram</a>
-            <a class="btn" href="#" target="_blank">Twitter</a>
-            <a class="btn" href="#" target="_blank">Website Explorer</a>
-        </p>
+
+        <a class="btn" href="" target="_blank">Telegram</a>
+
+        <a class="btn" href="https://x.com/yogatyui35447?t=BRJe6LdtaxLj11EjtZTc-g&s=09" target="_blank">
+            Twitter (X)
+        </a>
+
+        <a class="btn" href="#" target="_blank">Explorer</a>
     </div>
 
 </div>
 
 <footer>
-    © 2025 BlockCat v2 — Meme Coin Revolution
+    © 2025 BlockCat v2 — Meme Coin Revolution 🚀
 </footer>
 
 </body>
